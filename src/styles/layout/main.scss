@@ -1,0 +1,21 @@
+.main {
+    $this: &;
+
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+
+    > * {
+        padding: 2rem;
+    }
+
+    &__content {
+        flex: 1 0 30%;
+    }
+
+    &__image {
+        background-color: #f6f6f6;
+        flex: 1 0 70%;
+    }
+
+}

@@ -1,21 +1,24 @@
 .main {
     $this: &;
 
+    background-attachment: fixed;
+    background-color: #537f1a;
+    background-image: url(/images/cover--anxiety.jpg);
+    background-position: center left;
+    background-repeat: no-repeat;
+    background-size: cover;
     display: flex;
     flex: 1;
     flex-direction: row;
 
-    > * {
-        padding: 2rem;
-    }
-
     &__content {
-        flex: 1 0 30%;
+        background-color: hsla(0, 0%, 99%, .95);
+        flex: 0 0 35%;
+        padding: 4rem;
     }
 
     &__image {
-        background-color: #f6f6f6;
-        flex: 1 0 70%;
+        flex: 1;
     }
 
 }

@@ -1,12 +1,12 @@
 .btn {
-    background-color: $black;
+    background-color: #1a2a2d;
     border: 0 solid transparent;
-    border-radius: $radius;
-    color: $white;
+    border-radius: 4px;
+    color: #e5e51f;
     cursor: pointer;
     display: inline-block;
-    font-family: $font--title;
-    font-size: $font-size--xxs;
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.875rem;
     font-weight: 700;
     letter-spacing: .05em;
     line-height: 1.5;
@@ -14,7 +14,11 @@
     text-align: center;
     text-decoration: none;
     text-transform: uppercase;
+    -webkit-transition: 300ms;
     transition: 300ms;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
     user-select: none;
     vertical-align: middle;
     white-space: nowrap;

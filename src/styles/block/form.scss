@@ -1,6 +1,8 @@
 .form {
     $this: &;
 
+    font-size: 16px;
+
     &__block {
 
         &:not(:last-child) {
@@ -11,9 +13,19 @@
 
     &__label {
         display: block;
+        font-size: .75em;
+        letter-spacing: .1em;
+        margin-bottom: .25rem;
+        opacity: .75;
+        text-transform: uppercase;
     }
 
     &__input {
+        background-color: #fff;
+        border: 0 solid transparent;
+        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
+        font-size: 1em;
+        font-weight: normal;
         width: 100%;
     }
 
@@ -23,59 +35,6 @@
 
         &--is-show {
             display: block;
-        }
-
-    }
-
-    &__ddd {
-        width: 5em;
-
-        @include media('>md') {
-            width: 3em;
-        }
-
-    }
-
-    &__telephone-ramal {
-        display: flex;
-        flex-direction: column;
-
-        @include media('>sm') {
-            flex-direction: row;
-            flex-wrap: nowrap;
-
-            > *:first-child {
-                flex-basis: 80%;
-            }
-
-            > *:last-child {
-                flex-basis: 20%;
-            }
-        }
-
-    }
-
-    &__telephone {
-        display: flex;
-        flex-direction: row;
-        margin-bottom: $distance--sm;
-        width: 100%;
-
-        > *:first-child {
-            margin-right: $distance--xs;
-        }
-
-        > *:last-child {
-            flex: 1;
-
-            @include media('>sm') {
-                margin-right: $distance--xs;
-            }
-
-        }
-
-        @include media('>sm') {
-            width: auto;
         }
 
     }

@@ -254,7 +254,7 @@
                 </div>
                 <p class="">Compreendendo o momento, a Semente Educação liberou o acesso gratuito a um de seus mais importantes cursos o <strong>Regulação da Preocupação e da Ansiedade</strong>.</p>
                 <p>Basta preencher as informações abaixo para se cadastrar. Depois <a href="http://coreskills.programasemente.com.br">acesse o curso</a> e bons estudos.</p>
-                <form class="form">
+                <form class="form" id="form-dados">
                     <div class="form__block">
                         <label class="form__label" for="psfp-signup-name">Nome completo</label>
                         <input  class="form__input"
@@ -262,13 +262,17 @@
                                 autocapitalization="off"
                                 autocapitalize="off"
                                 autocorrect="off"
-                                max=""
-                                min=""
-                                name=""
+                                name="name"
                                 spellcheck="false"
-                                step=""
                                 type="text"
-                                value="">
+                                data-val="true"
+                                data-val-regex="Há erro no nome inserido. Caracteres especiais, talvez?"
+                                data-val-regex-pattern="^[a-zA-Z0-9-. ]*$"
+                                data-val-required="Este campo não pode ficar vazio." 
+                                >
+                        <span class="form__error field-validation-valid"
+                                data-valmsg-for="name"
+                                data-valmsg-replace="true"></span>
                     </div>
                     <div class="form__block">
                         <label class="form__label" for="psfp-signup-email">Email</label>
@@ -279,11 +283,17 @@
                                 autocorrect="off"
                                 max=""
                                 min=""
-                                name=""
+                                name="email"
                                 spellcheck="false"
                                 step=""
                                 type="email"
-                                value="">
+                                value=""
+                                data-val="true"
+                                data-val-email="Forneça um endereço de email válido"
+                                data-val-required="Este campo não pode ficar vazio.">
+                        <span class="form__error field-validation-valid" id="error-email"
+                                data-valmsg-for="email"
+                                data-valmsg-replace="true"></span>
                     </div>
                     <div class="form__block">
                         <label class="form__label" for="psfp-signup-pass">Defina sua senha</label>
@@ -292,13 +302,17 @@
                                 autocapitalization="off"
                                 autocapitalize="off"
                                 autocorrect="off"
-                                max=""
-                                min=""
-                                name=""
+                                name="senha"
                                 spellcheck="false"
-                                step=""
                                 type="password"
-                                value="">
+                                value=""
+                                data-val="true"
+                                data-val-regex="A senha deve ter pelo menos 6 caracteres"
+                                data-val-regex-pattern="^.{6,}$"
+                                data-val-required="Este campo não pode ficar vazio." >
+                        <span class="form__error field-validation-valid" 
+                                data-valmsg-for="senha"
+                                data-valmsg-replace="true"></span>
                     </div>
                     <div class="form__block">
                         <p class="small">
@@ -309,7 +323,7 @@
                             <span>Ao clicar em </span><strong>Cadastrar</strong><span>, você entende e aceita nossos</span> <a href="#">Termos de Serviço &amp; Política de Privacidade</a><span>.</span>
                         </p>
                     </div>
-                    <button class="btn btn--xs form__btn" type="button">Cadastrar</button>
+                    <button class="btn btn--xs form__btn" id="button" onclick="EnviarEmail()">Cadastrar</button>
                 </form>
             </div>
 
@@ -318,6 +332,14 @@
 
     </body>
 
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.17.0/jquery.validate.min.js" crossorigin="anonymous"
+        integrity="sha384-rZfj/ogBloos6wzLGpPkkOr/gpkBNLZ6b6yLy4o+ok+t/SAKlL5mvXLr0OXNi1Hp"> </script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.validation.unobtrusive/3.2.9/jquery.validate.unobtrusive.min.js"
+        crossorigin="anonymous" integrity="sha384-ifv0TYDWxBHzvAk2Z0n8R434FL1Rlv/Av18DXE43N/1rvHyOG4izKst0f2iSLdds">
+    </script>
     <script src="js/main.js"></script>
 
 </html>

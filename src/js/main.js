@@ -2,15 +2,15 @@ function toggleNav() {
     document.getElementById('header-nav').classList.toggle('header__nav--is-show');
 }
 
-document.getElementById("button").addEventListener("click", function (event) {
-    event.preventDefault()
-});
+// document.getElementById("button").addEventListener("click", function (event) {
+//     event.preventDefault()
+// });
 
-$(document).ready(function () {
-    document.getElementById("button").addEventListener("click", function (event) {
-        event.preventDefault()
-    });
-});
+// $(document).ready(function () {
+//     document.getElementById("button").addEventListener("click", function (event) {
+//         event.preventDefault()
+//     });
+// });
 
 
 var EnviarEmail = function () {
@@ -25,7 +25,7 @@ var EnviarEmail = function () {
         dado.senha = $("#psfp-signup-pass").val();
         dado = JSON.stringify(dado);
         $.ajax({
-            url: "http://localhost:64568/api/v0/pessoas/autoregister",
+            url: "http://sementeapidev.minimo.com.br/api/v0/pessoas/autoregister",
             type: 'POST',
             data: dado,
             //dataType: "json",

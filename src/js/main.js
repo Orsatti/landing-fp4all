@@ -38,14 +38,14 @@ var EnviarEmail = function () {
                 {
                     if (data.responseJSON.Message == "Email já cadastrado.")
                     {
-                        $("#error-email").html("E-mail já cadastrado")
-                        $("#error-email").removeClass("field-validation-valid");  
+                        $("#error-email").html("E-mail já cadastrado");
+                        $("#error-email").removeClass("field-validation-valid");
                     }
                 }
                 else
                 {
                     // TODO Erro desconhecido
-                    $("#error-unknown").html("Houve um problema")
+                    $("#error-unknown").html("Houve um problema");
                 }
             },
             contentType: "application/json",

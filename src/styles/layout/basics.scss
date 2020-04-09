@@ -47,12 +47,8 @@ h4 {
 }
 
 p {
-    font-size: 1.125rem;
-    margin-bottom: 2vh;
-
-    & + & {
-        margin-top: 1.25rem;
-    }
+    font-size: 1rem;
+    margin-bottom: 3vh;
 
     &:last-child {
         margin-bottom: 0;
@@ -105,4 +101,21 @@ textarea {
     font-size: 1.2em;
     font-weight: bold;
     padding: $distance--xxs;
+}
+
+@-webkit-keyframes autofill {
+    0%,100% {
+        color: #212121;
+        background: transparent;
+    }
+}
+
+input,
+select,
+textarea {
+    &:-webkit-autofill {
+        -webkit-animation-delay: 1s; /* Safari support - any positive time runs instantly */
+        -webkit-animation-fill-mode: both;
+        -webkit-animation-name: autofill;
+    }
 }

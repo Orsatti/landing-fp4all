@@ -2,35 +2,38 @@
     $this: &;
 
     font-size: 16px;
-    margin-top: 5vh;
 
     &__block {
 
         &:not(:last-of-type) {
-            margin-bottom: 2vh;
+            margin-bottom: 3vh;
         }
 
     }
 
     &__label {
         display: block;
-        margin-bottom: .25rem;
+        font-size: .75em;
         opacity: .75;
     }
 
     &__input {
-        background-color: #fff;
+        background-color: transparent;
         border: 0 solid transparent;
+        border-bottom: 1px solid $gray-10;
         border-radius: 2px;
-        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
+        display: block;
         font-size: 1em;
-        font-weight: normal;
+        font-weight: bold;
+        max-width: 24rem;
+        padding: 0;
         width: 100%;
     }
 
     &__error {
         color: $color-error;
-        font-size: $font-size--xxs;
+        font-size: .65em;
+        letter-spacing: .05em;
 
         &--is-show {
             display: block;
@@ -39,7 +42,7 @@
     }
 
     &__btn {
-        margin-top: 5vh;
+        margin-top: 3vh;
     }
 
 }

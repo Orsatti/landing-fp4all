@@ -1933,7 +1933,7 @@ input::-moz-focus-inner {
 .form {
   font-size: 16px; }
   .form__block:not(:last-of-type) {
-    margin-bottom: 4vh; }
+    margin-bottom: 2rem; }
   .form__label {
     display: block;
     font-size: .75em;
@@ -2080,9 +2080,9 @@ textarea:-webkit-autofill {
 
 .main {
   background-attachment: fixed;
-  background-color: #537f1a;
-  background-image: url(/images/cover--anxiety.jpg);
-  background-position: center left;
+  background-color: #261d34;
+  background-image: url("/images/cover--anxiety.jpg");
+  background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   display: -webkit-box;
@@ -2091,20 +2091,44 @@ textarea:-webkit-autofill {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  -webkit-box-orient: horizontal;
+  -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row; }
+      -ms-flex-direction: column;
+          flex-direction: column;
+  max-height: 100vh; }
+  @media (orientation: landscape) {
+    .main {
+      background-attachment: fixed;
+      background-color: #261d34;
+      background-image: url("/images/cover--anxiety--lg.jpg");
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+              flex-direction: row; } }
   .main__content {
     background-color: rgba(252, 252, 252, 0.95);
     -webkit-box-flex: 0;
-        -ms-flex: 0 0 40%;
-            flex: 0 0 40%;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+    margin: auto auto 0;
+    max-width: 96%;
     padding: 2rem; }
+    @media (orientation: landscape) {
+      .main__content {
+        -webkit-box-flex: 0;
+            -ms-flex: 0 0 40%;
+                flex: 0 0 40%;
+        margin: 0; } }
   .main__image {
-    -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1; }
+    display: none; }
+    @media (orientation: landscape) {
+      .main__image {
+        -webkit-box-flex: 1;
+            -ms-flex: 1;
+                flex: 1; } }
 
 .color-se__semente-color {
   fill: #8a8b8e; }

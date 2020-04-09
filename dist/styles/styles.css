@@ -1933,7 +1933,7 @@ input::-moz-focus-inner {
 .form {
   font-size: 16px; }
   .form__block:not(:last-of-type) {
-    margin-bottom: 3vh; }
+    margin-bottom: 4vh; }
   .form__label {
     display: block;
     font-size: .75em;

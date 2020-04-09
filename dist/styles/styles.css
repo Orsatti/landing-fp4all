@@ -1954,7 +1954,7 @@ input::-moz-focus-inner {
     .form__error--is-show {
       display: block; }
   .form__btn {
-    margin-top: 3vh; }
+    margin-top: 5vh; }
 
 .logo {
   margin-bottom: 5vh; }

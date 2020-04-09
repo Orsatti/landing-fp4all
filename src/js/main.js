@@ -45,6 +45,7 @@ var EnviarEmail = function () {
                 else
                 {
                     // TODO Erro desconhecido
+                    $("#error-unknown").html("Houve um problema")
                 }
             },
             contentType: "application/json",

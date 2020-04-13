@@ -265,13 +265,15 @@
                                 spellcheck="false"
                                 type="text"
                                 data-val="true"
-                                data-val-regex="Há erro no nome inserido. Caracteres especiais, talvez?"
+                                data-val-regex="Há problema no nome inserido. Caracteres especiais, talvez?"
                                 data-val-regex-pattern="^[a-zA-Z0-9-. ]*$"
                                 data-val-required="Este campo não pode ficar vazio."
                                 >
-                        <span class="form__error field-validation-valid"
-                                data-valmsg-for="name"
-                                data-valmsg-replace="true"></span>
+                                <div class="popover">
+                                    <span   class="form__error field-validation-valid"
+                                            data-valmsg-for="name"
+                                            data-valmsg-replace="true"></span>
+                                </div>
                     </div>
                     <div class="form__block">
                         <label class="form__label" for="psfp-signup-email">Email</label>
@@ -288,11 +290,13 @@
                                 type="email"
                                 value=""
                                 data-val="true"
-                                data-val-email="Forneça um endereço de email válido."
+                                data-val-email="Por favor, forneça um endereço de email válido."
                                 data-val-required="Este campo não pode ficar vazio.">
-                        <span class="form__error field-validation-valid" id="error-email"
-                                data-valmsg-for="email"
-                                data-valmsg-replace="true"></span>
+                        <div class="popover">
+                            <span class="form__error field-validation-valid" id="error-email"
+                            data-valmsg-for="email"
+                            data-valmsg-replace="true"></span>
+                        </div>
                     </div>
                     <div class="form__block">
                         <label class="form__label" for="psfp-signup-pass">Defina sua senha</label>
@@ -309,9 +313,11 @@
                                 data-val-regex="A senha deve ter pelo menos 6 caracteres"
                                 data-val-regex-pattern="^.{6,}$"
                                 data-val-required="Este campo não pode ficar vazio." >
-                        <span class="form__error field-validation-valid"
-                                data-valmsg-for="senha"
-                                data-valmsg-replace="true"></span>
+                        <div class="popover">
+                            <span class="form__error field-validation-valid"
+                                    data-valmsg-for="senha"
+                                    data-valmsg-replace="true"></span>
+                                </div>
                     </div>
                     <div class="form__block">
                         <!-- <p class="small">
@@ -322,7 +328,14 @@
                             <span>Ao clicar em </span><strong>Cadastrar</strong><span>, você entende e aceita nossos</span> <a href="#">Termos de Serviço &amp; Política de Privacidade</a><span>.</span>
                         </p>
                     </div>
-                    <button class="btn btn--sm form__btn" id="button" onclick="EnviarEmail()">Cadastrar</button>
+                    <div class="form__block" style="display: inline-block; min-width: 0;">
+                        <button class="btn btn--sm form__btn" id="button" onclick="EnviarEmail()">Cadastrar</button>
+                    </div>
+                    <div class="popover popover--success popover--is-show" id="sucesso">
+                        <span   class="form__success field-validation-valid"
+                                data-valmsg-for="name"
+                                data-valmsg-replace="true"><strong style="display: block; font-size: 1.5em; line-height: 1; margin-bottom: 1em;">Cadastro efetuado com sucesso!</strong> Agora é só <a href="https://plataforma.coreskills.com.br">ir até plataforma</a> e entrar com seu e-mail e senha!</span>
+                    </div>
                 </form>
             </div>
 

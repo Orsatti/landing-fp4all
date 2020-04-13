@@ -48,3 +48,7 @@ var EnviarEmail = function () {
         console.log("Form não válidado. Opa!");
     }
 }
+
+function toggleTerms() {
+    $('.popover--terms').toggleClass('popover--is-show');
+}

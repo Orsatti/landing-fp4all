@@ -2,17 +2,6 @@ function toggleNav() {
     document.getElementById('header-nav').classList.toggle('header__nav--is-show');
 }
 
-// document.getElementById("button").addEventListener("click", function (event) {
-//     event.preventDefault()
-// });
-
-// $(document).ready(function () {
-//     document.getElementById("button").addEventListener("click", function (event) {
-//         event.preventDefault()
-//     });
-// });
-
-
 var EnviarEmail = function () {
     debugger;
     var form = $("#form-dados");
@@ -30,24 +19,28 @@ var EnviarEmail = function () {
             data: dado,
             //dataType: "json",
             success: function (data) {
+                console.log("xklngsdlkgjdlk");
                 // TODO Fazer aparecer o retorno de sucesso
-                $("#sucesso").addClass("alert--is-show");
+                $("#sucesso").addClass("popover--is-show");
             },
             error: function (data) {
                 if (data.status === 400)
                 {
                     if (data.responseJSON.Message == "Email já cadastrado.")
                     {
-                        $("#error-email").html("E-mail já cadastrado")
-                        $("#error-email").removeClass("field-validation-valid");  
+                        $("#error-email").html("E-mail já cadastrado");
+                        $("#error-email").removeClass("field-validation-valid");
                     }
                 }
                 else
                 {
                     // TODO Erro desconhecido
+                    $("#error-unknown").html("Houve um problema");
                 }
             },
             contentType: "application/json",
         });
+    } else {
+        console.log("Form não válidado. Opa!");
     }
 }

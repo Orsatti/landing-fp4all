@@ -1,36 +1,45 @@
 .form {
     $this: &;
 
+    display: flex;
+    flex-direction: column;
     font-size: 16px;
-    margin-top: 5vh;
 
     &__block {
+        align-self: flex-start;
+        display: inline-flex;
+        flex-direction: column;
+        min-width: 24rem;
+        position: relative;
 
         &:not(:last-of-type) {
-            margin-bottom: 2vh;
+            margin-bottom: 2rem;
         }
 
     }
 
     &__label {
         display: block;
-        margin-bottom: .25rem;
+        font-size: .75em;
         opacity: .75;
     }
 
     &__input {
-        background-color: #fff;
+        background-color: transparent;
         border: 0 solid transparent;
+        border-bottom: 1px solid $gray-10;
         border-radius: 2px;
-        box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .1);
+        display: block;
         font-size: 1em;
-        font-weight: normal;
+        font-weight: bold;
+        padding: 0;
         width: 100%;
     }
 
     &__error {
-        color: $color-error;
-        font-size: $font-size--xxs;
+        color: inherit;
+        display: inline-block;
+        font-size: inherit;
 
         &--is-show {
             display: block;
@@ -39,7 +48,11 @@
     }
 
     &__btn {
-        margin-top: 5vh;
+
+        @include media('landscape') {
+            align-self: flex-start;
+        }
+
     }
 
 }

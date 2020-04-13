@@ -1,24 +1,51 @@
+$main-bg-color: hsl(263, 28%, 16%);
+$main-content-bg-color: hsla(0, 0%, 99%, .95);
+
 .main {
     $this: &;
 
     background-attachment: fixed;
-    background-color: #537f1a;
-    background-image: url(/images/cover--anxiety.jpg);
-    background-position: center left;
+    background-color: $main-bg-color;
+    background-image: url('/images/cover--anxiety.jpg');
+    background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
     flex: 1;
-    flex-direction: row;
+    flex-direction: column;
+    max-height: 100vh;
+
+
+    @include media('landscape') {
+        background-attachment: fixed;
+        background-color: $main-bg-color;
+        background-image: url('/images/cover--anxiety--lg.jpg');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        flex-direction: row;
+    }
 
     &__content {
-        background-color: hsla(0, 0%, 99%, .95);
-        flex: 0 0 35%;
-        padding: 4rem;
+        background-color: $main-content-bg-color;
+        flex: 0 0 auto;
+        margin: auto auto 0;
+        max-width: 96%;
+        padding: 2rem;
+        position: relative;
+
+        @include media('landscape') {
+            flex: 0 0 40%;
+            margin: 0;
+        }
     }
 
     &__image {
-        flex: 1;
+        display: none;
+
+        @include media('landscape') {
+            flex: 1;
+        }
     }
 
 }

@@ -51,4 +51,5 @@ var EnviarEmail = function () {
 
 function toggleTerms() {
     $('.j-modal--terms').toggleClass('modal--is-show');
+    $('.j-terms').scrollTop(0);
 }

@@ -2,6 +2,10 @@ function toggleNav() {
     document.getElementById('header-nav').classList.toggle('header__nav--is-show');
 }
 
+document.getElementById("button").addEventListener("click", function (event) {
+    event.preventDefault()
+});
+
 var EnviarEmail = function () {
     debugger;
     var form = $("#form-dados");

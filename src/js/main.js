@@ -51,4 +51,5 @@ var EnviarEmail = function () {
 
 function toggleTerms() {
     $('.popover--terms').toggleClass('popover--is-show');
+    $('.popover__content').scrollTop(0);
 }

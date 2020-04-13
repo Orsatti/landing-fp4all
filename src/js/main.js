@@ -18,7 +18,7 @@ var EnviarEmail = function () {
         dado.senha = $("#psfp-signup-pass").val();
         dado = JSON.stringify(dado);
         $.ajax({
-            url: "http://sementeapidev.minimo.com.br/api/v0/pessoas/autoregister",
+            url: "https://sementeapi.minimo.com.br/api/v0/pessoas/autoregister",
             type: 'POST',
             data: dado,
             //dataType: "json",

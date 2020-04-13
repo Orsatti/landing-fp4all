@@ -50,5 +50,5 @@ var EnviarEmail = function () {
 }
 
 function toggleTerms() {
-    $('.popover--terms').toggleClass('popover--is-show');
+    $('.j-modal--terms').toggleClass('modal--is-show');
 }

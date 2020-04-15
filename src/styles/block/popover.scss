@@ -15,7 +15,7 @@ $popover-bg-color: rgba(224, 0, 0, 0.85);
     width: 16rem;
     z-index: 4;
 
-    a { color: inherit; cursor: pointer; font-weight: bold; text-underline-position: under; text-decoration: none;}
+    a { color: inherit; cursor: pointer; font-weight: bold; text-underline-position: under;}
 
     &:before {
         border-bottom: 7px solid transparent;

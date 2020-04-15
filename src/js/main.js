@@ -2,6 +2,14 @@ function toggleNav() {
     document.getElementById('header-nav').classList.toggle('header__nav--is-show');
 }
 
+function waitLabel() {
+    $('#button').html('Aguarde...');
+}
+
+function resetLabel() {
+    $('#button').html('CADASTRAR');
+}
+
 document.getElementById("button").addEventListener("click", function (event) {
     event.preventDefault()
 });
@@ -18,20 +26,24 @@ var EnviarEmail = function () {
         dado.senha = $("#psfp-signup-pass").val();
         dado = JSON.stringify(dado);
         $.ajax({
-            url: "https://sementeapi.minimo.com.br/api/v0/pessoas/autoregister",
+            url: "http://sementeapidev.minimo.com.br/api/v0/pessoas/autoregister",
             type: 'POST',
             data: dado,
             //dataType: "json",
             success: function (data) {
                 console.log("xklngsdlkgjdlk");
                 // TODO Fazer aparecer o retorno de sucesso
+                $('#button').html('CADASTRAR');
                 $("#sucesso").addClass("popover--is-show");
+                setTimeout(function(){ window.location.href = "https://plataforma.coreskills.com.br"; }, 9000);
+                
             },
             error: function (data) {
                 if (data.status === 400)
-                {
+                {                    
                     if (data.responseJSON.Message == "Email já cadastrado.")
                     {
+                        $('#button').html('CADASTRAR');
                         $("#error-email").html("E-mail já cadastrado");
                         $("#error-email").removeClass("field-validation-valid");
                     }
@@ -39,13 +51,19 @@ var EnviarEmail = function () {
                 else
                 {
                     // TODO Erro desconhecido
+                    $('#button').html('CADASTRAR');
                     $("#error-unknown").html("Houve um problema");
                 }
             },
             contentType: "application/json",
         });
     } else {
-        console.log("Form não válidado. Opa!");
+        (function resetbtn() {
+        console.log("Form não vlidado. Opa!!");
+        setTimeout(function(){  $('#button').html('CADASTRAR'); }, 10);
+        })()
+                
+        
     }
 }
 

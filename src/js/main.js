@@ -33,19 +33,25 @@ var EnviarEmail = function () {
             success: function (data) {
                 console.log("xklngsdlkgjdlk");
                 // TODO Fazer aparecer o retorno de sucesso
-                $('#button').html('CADASTRAR');
+                $('#button').html('Redirecionando...');
                 $("#sucesso").addClass("popover--is-show");
-                setTimeout(function(){ window.location.href = "https://plataforma.coreskills.com.br"; }, 9000);
+                $("#error-email").removeClass("popover--is-show");
+                setTimeout(function(){ window.location.href = "https://fp.programasemente.com.br"; }, 9000);
                 
             },
             error: function (data) {
                 if (data.status === 400)
                 {                    
+                    
                     if (data.responseJSON.Message == "Email já cadastrado.")
                     {
+                       
+                       $("#error-email").addClass("popover--is-show");
+                        setTimeout(function(){  $("#error-email").removeClass("popover--is-show"); }, 3000);
                         $('#button').html('CADASTRAR');
                         $("#error-email").html("E-mail já cadastrado");
                         $("#error-email").removeClass("field-validation-valid");
+                                           
                     }
                 }
                 else
